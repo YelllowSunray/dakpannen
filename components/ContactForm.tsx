@@ -131,15 +131,17 @@ export function ContactForm({ services }: { services: Option[] }) {
             className="mt-1.5 w-full rounded-xl border border-line bg-cream px-3 py-3 text-base text-ink placeholder:text-muted"
           />
         </label>
-        <label className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
-          Bedrijf
-          <input
-            tabIndex={-1}
-            autoComplete="off"
-            value={fields.company}
-            onChange={(event) => update("company", event.target.value)}
-          />
-        </label>
+        <div className="hidden" aria-hidden="true">
+          <label>
+            Bedrijf
+            <input
+              tabIndex={-1}
+              autoComplete="off"
+              value={fields.company}
+              onChange={(event) => update("company", event.target.value)}
+            />
+          </label>
+        </div>
       </div>
 
       {error ? (

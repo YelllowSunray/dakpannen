@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Outfit } from "next/font/google";
+import { Fraunces, Italianno, Outfit } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { MobileBar } from "@/components/MobileBar";
+import { StyleChooser } from "@/components/StyleChooser";
 import { businessJsonLd } from "@/lib/seo";
 import { nav, site } from "@/lib/site";
 import "./globals.css";
@@ -18,6 +19,13 @@ const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-outfit",
+});
+
+const italianno = Italianno({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-italianno",
 });
 
 export const metadata: Metadata = {
@@ -66,7 +74,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="nl" className={`${fraunces.variable} ${outfit.variable} h-full antialiased`}>
+    <html
+      lang="nl"
+      className={`${fraunces.variable} ${outfit.variable} ${italianno.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
       <body className="min-h-full font-sans text-ink">
         <JsonLd data={businessJsonLd()} />
         <a
@@ -76,6 +88,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Naar de inhoud
         </a>
         <Header items={[...nav]} phone={site.phoneDisplay} phoneHref={site.phoneHref} />
+        <StyleChooser />
         <main id="inhoud">{children}</main>
         <Footer />
         <MobileBar phone={site.phoneDisplay} phoneHref={site.phoneHref} whatsappHref={site.whatsappHref} />

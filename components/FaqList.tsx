@@ -9,7 +9,7 @@ export function FaqList({ faqs }: { faqs: Faq[] }) {
             {faq.question}
             <span
               aria-hidden="true"
-              className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-xl leading-none text-clay-deep motion-safe:transition group-open:rotate-45"
+              className="keep-square grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-xl leading-none text-clay-deep motion-safe:transition group-open:rotate-45"
             >
               +
             </span>

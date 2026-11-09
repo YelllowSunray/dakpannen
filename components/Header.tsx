@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Logo } from "@/components/Logo";
 
 type Item = { href: string; label: string };
 
@@ -35,18 +35,14 @@ export function Header({
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-cream/90 backdrop-blur-md">
-      <div className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link href="/" className="shrink-0" aria-label="Alles Onder Een Dak, naar de startpagina">
-          <Image
-            src="/images/logo.png"
-            alt="Alles Onder Een Dak"
-            width={1920}
-            height={562}
-            priority
-            className="h-10 w-auto sm:h-12"
-          />
-        </Link>
+    <header className="sticky top-0 z-40 border-b border-line/80 bg-cream">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+        <Logo
+          priority
+          className="gap-1.5 sm:gap-2.5"
+          markClassName="h-7 w-auto sm:h-9 xl:h-11"
+          wordClassName="text-[1.28rem] leading-[0.82] sm:text-[1.5rem] xl:text-[1.9rem]"
+        />
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Hoofdmenu">
           {items.map((item) => (
@@ -78,7 +74,7 @@ export function Header({
           </Link>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line lg:hidden"
+            className="keep-square inline-flex h-11 w-11 items-center justify-center rounded-full border border-line lg:hidden"
             aria-expanded={open}
             aria-controls="mobiel-menu"
             onClick={() => setOpen((value) => !value)}
@@ -96,7 +92,7 @@ export function Header({
       {open ? (
         <nav
           id="mobiel-menu"
-          className="fixed inset-x-0 bottom-0 top-[4.25rem] z-40 overflow-y-auto bg-cream px-6 py-6 lg:hidden"
+          className="fixed inset-x-0 bottom-0 top-20 z-40 overflow-y-auto bg-cream px-6 py-6 lg:hidden"
           aria-label="Mobiel menu"
         >
           <ul className="flex flex-col">

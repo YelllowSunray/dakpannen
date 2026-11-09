@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       <JsonLd data={faqJsonLd(homeFaqs)} />
-      <section className="relative isolate min-h-[calc(100svh-4.25rem)] overflow-hidden">
+      <section data-hero className="relative isolate min-h-[calc(100svh-5rem)]">
         <Image
           src="/images/hero-straat.jpeg"
           alt="Gerenoveerd oranjerood pannendak met dakkapel op een bakstenen rijwoning"
@@ -41,11 +41,11 @@ export default function Home() {
           priority
           loading="eager"
           sizes="100vw"
-          className="object-cover object-[center_40%]"
+          className="object-cover object-[center_70%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-ink/20" />
-        <div className="relative mx-auto flex min-h-[calc(100svh-4.25rem)] max-w-6xl flex-col justify-end px-4 pb-12 pt-16 sm:px-6 md:pb-16">
+        <div className="hero-shade-x absolute inset-0 bg-gradient-to-r from-ink/88 via-ink/55 to-ink/15" />
+        <div className="hero-shade-y absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/15 to-ink/25" />
+        <div className="relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] max-w-6xl flex-col justify-end px-4 pb-52 pt-12 sm:px-6 md:pb-36">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay">
             Dakdekker in Someren en Eindhoven
           </p>
@@ -204,7 +204,7 @@ export default function Home() {
         <ul className="grid grid-cols-2 gap-3 md:grid-cols-4">
           {projects.slice(0, 4).map((project) => (
             <li key={project.src} className="overflow-hidden rounded-2xl">
-              <Link href="/ons-werk">
+              <Link href="/ons-werk" aria-label={project.title}>
                 <Image
                   src={project.src}
                   alt={project.alt}

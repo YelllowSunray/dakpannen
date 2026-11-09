@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 import { nav, services, site } from "@/lib/site";
 
 export function Footer() {
@@ -6,7 +7,12 @@ export function Footer() {
     <footer className="bg-ink text-cream">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-12">
         <div className="md:col-span-4">
-          <p className="font-serif text-3xl">Alles Onder Een Dak</p>
+          <Logo
+            stacked
+            markClassName="h-9 w-auto"
+            wordClassName="text-[1.85rem] leading-[0.82]"
+            className="gap-2"
+          />
           <p className="mt-3 max-w-xs text-cream/75">{site.slogan}</p>
           <address className="mt-6 not-italic text-cream/85">
             {site.street}

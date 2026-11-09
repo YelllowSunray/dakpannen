@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Logo } from "@/components/Logo";
 import { CtaBand } from "@/components/CtaBand";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -26,7 +27,14 @@ export default function OverOnsPage() {
         />
         <div className="grid items-end gap-8 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-clay-deep">Over ons</p>
+            <Logo
+              linked={false}
+              stacked
+              markClassName="h-12 w-auto sm:h-14"
+              wordClassName="text-[2.4rem] leading-[0.82] sm:text-[2.8rem]"
+              className="mb-8 gap-3"
+            />
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-clay-deep">Over ons</p>
             <h1 className="mt-3 font-serif text-5xl leading-tight md:text-6xl">
               Alles onder één dak: uw dakpartner
             </h1>
