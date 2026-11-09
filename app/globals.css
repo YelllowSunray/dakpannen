@@ -76,106 +76,218 @@ details summary::-webkit-details-marker {
     0 -0.03em 0 #000;
 }
 
-/* Modern: licht, zacht, met oranje alleen als accent. */
+/* Modern: brutalist. Hard black, hard white, 90° corners. */
 [data-style="modern"] {
-  --background: #f6f6f7;
-  --foreground: #141414;
-  --color-ink: #141414;
+  --background: #ffffff;
+  --foreground: #000000;
+  --color-ink: #000000;
   --color-cream: #ffffff;
   --color-sand: #ffffff;
-  --color-clay: #ed7c30;
-  --color-clay-deep: #141414;
-  --color-bark: #3f3f3f;
-  --color-muted: #6d6d6d;
-  --color-line: #e8e8ea;
+  --color-clay: #000000;
+  --color-clay-deep: #000000;
+  --color-bark: #111111;
+  --color-muted: #222222;
+  --color-line: #000000;
 }
 
 [data-style="modern"] body {
-  background: #f6f6f7;
+  background: #ffffff;
 }
 
 [data-style="modern"] .font-serif {
   font-family: var(--font-outfit), sans-serif;
   font-style: normal;
-  font-weight: 500;
-  letter-spacing: -0.052em;
+  font-weight: 700;
+  letter-spacing: -0.045em;
 }
 
-[data-style="modern"] .rounded-full {
-  border-radius: 999px;
+[data-style="modern"] .rounded-full,
+[data-style="modern"] .rounded-3xl,
+[data-style="modern"] .rounded-2xl,
+[data-style="modern"] .rounded-xl,
+[data-style="modern"] .rounded-lg,
+[data-style="modern"] .rounded-md,
+[data-style="modern"] .rounded {
+  border-radius: 0;
 }
 
-[data-style="modern"] .rounded-3xl {
-  border-radius: 1.75rem;
-}
-
-[data-style="modern"] .rounded-2xl {
-  border-radius: 1.25rem;
-}
-
-[data-style="modern"] .rounded-xl {
-  border-radius: 1rem;
+[data-style="modern"] [class*="shadow"]:not(.style-chooser):not(.style-chooser *) {
+  box-shadow: none;
 }
 
 [data-style="modern"] header {
-  border-bottom-color: transparent;
-  box-shadow: 0 1px 0 rgba(20, 20, 20, 0.06);
+  border-bottom: 2px solid #000;
+  box-shadow: none;
 }
 
 [data-style="modern"] header nav a {
-  font-size: 0.92rem;
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  text-transform: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 [data-style="modern"] p.uppercase {
-  color: #ed7c30;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+[data-style="modern"] .bg-ink p.uppercase {
+  color: #fff;
 }
 
 [data-style="modern"] a.text-clay-deep {
-  color: #ed7c30;
+  color: #000;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
 }
 
-[data-style="modern"] .bg-sand {
-  box-shadow: 0 1px 2px rgba(20, 20, 20, 0.04), 0 16px 40px rgba(20, 20, 20, 0.05);
-}
-
-[data-style="modern"] a.rounded-3xl.border {
+[data-style="modern"] .bg-sand,
+[data-style="modern"] .rounded-3xl.border,
+[data-style="modern"] .rounded-2xl.border,
+[data-style="modern"] input,
+[data-style="modern"] textarea,
+[data-style="modern"] select {
+  border: 2px solid #000;
   background: #fff;
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: none;
 }
 
-[data-style="modern"] a.rounded-3xl.border:hover {
-  border-color: #ed7c30;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(20, 20, 20, 0.06);
+[data-style="modern"] .bg-ink.rounded-3xl {
+  background: #000;
+  color: #fff;
+  border: 2px solid #000;
 }
 
-[data-style="modern"] .hero-shade-x {
-  background: linear-gradient(100deg, rgba(16, 16, 16, 0.72) 0%, rgba(16, 16, 16, 0.38) 46%, rgba(16, 16, 16, 0.02) 100%);
+[data-style="modern"] a.rounded-3xl.border:hover,
+[data-style="modern"] a.rounded-full.border:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
 }
 
+[data-style="modern"] .bg-clay,
+[data-style="modern"] .bg-clay-deep {
+  background: #000;
+  color: #fff;
+  border: 2px solid #000;
+}
+
+[data-style="modern"] .bg-clay:hover,
+[data-style="modern"] .bg-clay-deep:hover {
+  background: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+[data-style="modern"] .bg-ink .text-clay {
+  color: #fff;
+}
+
+[data-style="modern"] .bg-ink .bg-clay {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+[data-style="modern"] .bg-ink .bg-clay:hover {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+[data-style="modern"] [data-hero] {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+[data-style="modern"] [data-hero] > img {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: 46vh !important;
+  min-height: 16rem;
+  flex: 1 1 auto;
+  border-bottom: 2px solid #000;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  [data-style="modern"] [data-hero] > img {
+    height: 23vh !important;
+    min-height: 0;
+    flex: none;
+    object-position: center 68%;
+  }
+}
+
+[data-style="modern"] [data-hero] > .relative {
+  min-height: 0;
+  flex: none;
+  background: #fff;
+  color: #000;
+}
+
+[data-style="modern"] [data-hero] h1,
+[data-style="modern"] [data-hero] p,
+[data-style="modern"] [data-hero] a.border {
+  color: #000;
+}
+
+[data-style="modern"] [data-hero] .bg-clay {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+[data-style="modern"] [data-hero] .bg-clay:hover {
+  background: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+[data-style="modern"] [data-hero] .border-white\/40 {
+  border-color: #000;
+}
+
+[data-style="modern"] .border-white\/40,
+[data-style="modern"] .border-white\/25,
+[data-style="modern"] .border-white\/30 {
+  border-color: #fff;
+  border-width: 2px;
+}
+
+[data-style="modern"] .hero-shade-x,
 [data-style="modern"] .hero-shade-y {
-  background: linear-gradient(to top, rgba(16, 16, 16, 0.5), transparent 52%);
+  display: none;
 }
 
 [data-style="modern"] section.border-b.bg-white {
-  background: transparent;
-  border-color: transparent;
+  background: #fff;
+  border-bottom: 2px solid #000;
+}
+
+[data-style="modern"] .fixed.inset-x-0.bottom-0 {
+  background: #fff;
+  border-top: 2px solid #000;
+  backdrop-filter: none;
 }
 
 [data-style="modern"] footer {
-  box-shadow: inset 0 1px 0 #ed7c30;
+  border-top: 8px solid #000;
+  box-shadow: none;
 }
 
 [data-style="modern"] :focus-visible {
-  outline-color: #ed7c30;
+  outline-color: #000;
 }
 
 [data-style="modern"] ::selection {
-  background: #ed7c30;
-  color: #141414;
+  background: #000;
+  color: #fff;
 }
 
 /* Hoekig: scherper, koeler, meer oranje. Bestaand logo blijft. */

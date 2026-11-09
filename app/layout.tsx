@@ -76,7 +76,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="nl"
-      data-style="modern"
       className={`${fraunces.variable} ${outfit.variable} ${italianno.variable} h-full antialiased`}
       suppressHydrationWarning
     >

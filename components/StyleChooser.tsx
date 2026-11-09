@@ -34,7 +34,7 @@ function readStyle(): SiteStyle {
   } catch {
     /* private mode */
   }
-  return "modern";
+  return "bestaand";
 }
 
 function applyStyle(style: SiteStyle) {
@@ -48,7 +48,7 @@ function applyStyle(style: SiteStyle) {
 }
 
 export function StyleChooser() {
-  const [style, setStyle] = useState<SiteStyle>("modern");
+  const [style, setStyle] = useState<SiteStyle>("bestaand");
 
   useLayoutEffect(() => {
     const stored = readStyle();
