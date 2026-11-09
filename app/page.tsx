@@ -45,7 +45,7 @@ export default function Home() {
         />
         <div className="hero-shade-x absolute inset-0 bg-gradient-to-r from-ink/88 via-ink/55 to-ink/15" />
         <div className="hero-shade-y absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/15 to-ink/25" />
-        <div className="relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] max-w-6xl flex-col justify-end px-4 pb-52 pt-12 sm:px-6 md:pb-36">
+        <div className="relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] max-w-6xl flex-col justify-end px-4 pb-28 pt-12 sm:px-6 md:pb-36">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay">
             Dakdekker in Someren en Eindhoven
           </p>
